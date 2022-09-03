@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+.container {
+ background-color: #161616;
+ height: 100vh;
+ color: #fff;
+}
+
+.card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 10px;
+
+    border: 2px solid red;
+    height: 30%;
+}
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid red;
+    height: 30%;
+}
+
+.card3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    border: 2px solid red;
+    height: 30%;
+}
+
+.models {
+    height: 50px;
+    width: 300px;
+    text-align: center;
+}
+
+.grade {
+    height: 30px;
+    width: 120px;
+}
+
+#peso {
+    height: 25px;
+    width: 100px;
+}
+
+#btn-salvar {
+    height: 40px;
+    width: 100px;  
+}
+#btn-finalizar {
+    height: 25px;
+    width: 100px;  
+}
+
+.fim {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <link rel="stylesheet" href="./assets/style.css" /> -->
+    <title>Document</title>
+	
+	<style>
+	 * {
+    margin: 0;
+    padding: 0
+}
+
+body {
+	display: flex;
+	background-color: #191970;
+}
+
+.container {
+ background-color: #191970;
+ height: 100vh;
+ width: 100vw;
+ color: #fff;
+ 
+}
+
+.container2 {
+ 
+ color: #fff;
+ width: 100%;
+}
+
+table {
+	width: 200px;
+    border-collapse: collapse;
+	text-align: center;
+}
+
+
+.card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 10px;
+
+    height: 30%;
+}
+.card {
+    display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 30%;
+}
+
+.card3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    height: 30%;
+}
+
+.models {
+    height: 50px;
+    width: 300px;
+    text-align: center;
+}
+
+.grade {
+    height: 30px;
+    width: 120px;
+}
+
+#peso {
+    height: 25px;
+    width: 100px;
+}
+
+#linear {
+    background-color: #fff;
+	margin-bottom: 20px;
+	height: 40px;
+}
+
+#btn-salvar {
+    height: 40px;
+    width: 100px;  
+}
+#btn-finalizar {
+    height: 25px;
+    width: 100px;  
+}
+
+.fim {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.fim h1 {
+	background-color: red;
+	width: 50px;
+	cursor: pointer;
+	text-align: center;
+}
+
+#logo {
+	background-color: #000;
+	width: 418px;
+	border-radius: 10px;
+}
+
+.fim2 {
+    display: flex;
+    justify-content: flex-end;
+    width: 95%;
+    padding: 10px;
+}
+.fim2 h1 {
+	background-color: red;
+	width: 50px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.btn-finalizar {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+#btn-fechar {
+	height: 50px;
+	width: 100px;
+}
+
+	</style>
+</head>
+<body>
+    <main class="container">
+       <div class="card1">
+        <div class="fim">
+		<h1 id="logo">BAE</h1>
+            <h1>X</h1>
+        </div>
+        <select class="models">
+            <optgroup label="MODELOS">
+					<option value="SOFIA BANHO">SOFIA BANHO</option>
+					<option value="SOFIA ROSTO">SOFIA ROSTO</option>
+					<option value="BAMBÚ BANHO">BAMBÚ BANHO</option>
+					<option value="BAMBÚ ROSTO">BAMBÚ ROSTO</option>
+					<option value="GRÉCIA BANHO">GRÉCIA BANHO</option>
+					<option value="GRÉCIA ROSTO">GRÉCIA ROSTO</option>
+					<option value="MÔNACO BANHO">MÔNACO BANHO</option>
+					<option value="MÔNACO ROSTO">MÔNACO ROSTO</option>
+					<option value="FLORENÇA BANHO">FLORENÇA BANHO</option>
+					<option value="FLORENÇA ROSTO">FLORENÇA ROSTO</option>
+					<option value="ROYAL BANHO">ROYAL BANHO</option>
+					<option value="ROYAL ROSTO">ROYAL ROSTO</option>
+					<option value="PRO-LINE BANHO">PRO-LINE BANHO</option>
+					<option value="PRO-LINE ROSTO LISA">PRO-LINE ROSTO LISA</option>
+					<option value="ÉVORA BANHO">ÉVORA BANHO</option>
+					<option value="ÉVORA ROSTO">ÉVORA ROSTO</option>
+					<option value="MILÃO BANHO">MILÃO BANHO</option>
+					<option value="MILÃO ROSTO">MILÃO ROSTO</option>
+					<option value="MILÃO 2 BANHO">MILÃO 2 BANHO</option>
+					<option value="MILÃO 2 ROSTO">MILÃO 2 ROSTO</option>
+					<option value="HOTEL BANHO">HOTEL BANHO</option>
+					<option value="HOTEL ROSTO">HOTEL ROSTO</option>
+					<option value="HOTEL PISO ">HOTEL PISO </option>
+					<option value="HOTEL 2 BANHO">HOTEL 2 BANHO</option>
+					<option value="PRO-LINE D BANHO LISA">PRO-LINE D BANHO LISA</option>
+					<option value="PRO-LINE D ROSTO LISA">PRO-LINE D ROSTO LISA</option>
+					<option value="PRO-LINE PISO">PRO-LINE PISO</option>
+            </optgroup>
+        </select>
+       </div>
+       <div class="card">
+	     <input id="linear" type="text" placeholder="linear" disabled="">
+			 <div>
+			   <select class="grade">
+					<option value="">GRADE</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+				<select class="grade">
+					<option value="">QUANTIDADE</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+					<option value="20">20</option>
+					<option value="25">25</option>
+					<option value="30">30</option>
+					<option value="35">35</option>
+					<option value="40">40</option>
+					<option value="45">45</option>
+					<option value="50">50</option>
+					<option value="55">55</option>
+					<option value="60">60</option>
+					<option value="65">65</option>
+					<option value="70">70</option>
+					<option value="75">75</option>
+					<option value="80">80</option>
+					<option value="85">85</option>
+					<option value="90">90</option>
+					<option value="95">95</option>
+					<option value="100">100</option>
+				</select>
+				<input id="peso" type="number" placeholder="peso">
+				
+			 </div>
+       </div>
+       <div class="card3">
+        <input id="btn-salvar" type="button" value="SALVAR" placeholder="peso">
+       </div>
+    </main>
+	
+	<main id="main2" class="container2">
+	  <div class="fim2">
+            <h1>X</h1>
+        </div>
+	 <table border='1'>
+	     <thead>
+		 
+			 <tr>
+			 <td>MODELO</td>
+				<td>TARA</td>
+				<td>VOLUMES</td>
+				<td>QUANTIDADES</td>
+				<td>PESO</td>
+				<td>LINEAR</td>
+			 </tr>
+		 </thead>
+		 <tbody id="remove1"></tbody>
+		 <tbody id="remove2"></tbody>
+	 </table>
+		 <div class="btn-finalizar">
+		  <input id="btn-fechar" type="button" value="FINALIZAR" >
+		 </div>
+	 
+	</main>
+    <script>
+	 
+var el = document.getElementById('btn-salvar');
+var finalizar = document.querySelectorAll('h1')[1];
+var finalizar2 = document.querySelectorAll('h1')[2];
+var container = document.querySelector('.container');
+var container2 = document.querySelector('.container2');
+var fechar = document.querySelector('#btn-fechar');
+
+ container.style.display = 'block';
+ container2.style.display = 'none';
+
+	
+var obj = {
+"SOFIA BANHO": 0.019,
+"SOFIA ROSTO": 0.086,
+"BAMBÚ BANHO": 0.021,
+"BAMBÚ ROSTO": 0.010,
+"GRÉCIA	BANHO": 0.018,
+"GRÉCIA	ROSTO": 0.097,
+"MÔNACO	BANHO": 0.017,
+"MÔNACO	ROSTO": 0.085,
+"FLORENÇA BANHO": 0.024,
+"FLORENÇA ROSTO": 0.012,
+"ROYAL BANHO": 0.025,
+"ROYAL ROSTO": 0.010,
+"PRO-LINE BANHO": 0.019,
+"PRO-LINE ROSTO LISA": 0.018,
+"ÉVORA BANHO": 0.018,
+"ÉVORA	ROSTO": 0.011,
+"MILÃO	BANHO": 0.016,
+"MILÃO	ROSTO": 0.016,
+"MILÃO 2 BANHO": 0.016,
+"MILÃO 2 ROSTO": 0.016,
+"HOTEL BANHO": 0,
+"HOTEL ROSTO": 0,
+"HOTEL PISO": 0,
+"HOTEL 2 BANHO": 0,
+"PRO-LINE D	BANHO LISA": 0.019,
+"PRO-LINE D	ROSTO LISA": 0.018,
+"PRO-LINE PISO": 0.019,
+}
+
+
+
+el.addEventListener("click", function() {
+	var contador = localStorage.length;
+	var contReal = contador + 1;
+
+    var models = document.querySelector('.models').value;
+    var select1 = document.querySelectorAll('select')[1].value;
+    var select2 = document.querySelectorAll('select')[2].value;
+    var peso = document.querySelector('#peso').value;
+	
+	if(select1 != '' || select2 != '' || peso != '') {
+	function linear(tara, min, max) {
+	 
+	 let linear = document.querySelector('#linear');
+	 var a = (select1 * tara) + 0.080;
+	 var b = (peso - a) / select2;
+	
+	  linear.value = b.toFixed(3);
+	 
+	 const arr = [models, select1, select2, peso, b, a];
+	 localStorage.setItem("model"+contador, arr);
+	 var tese = localStorage.getItem("model"+contador).split(',');
+	 alert("salvo!")
+	 
+	 let comparador = b.toFixed(3);
+	 
+	 if(comparador >= min && comparador <= max) {
+		let visor = document.querySelector('#linear');
+		     visor.style.backgroundColor = 'green';
+			  visor.style.color = '#fff';
+		   
+		
+	 } else {
+		let visor = document.querySelector('#linear');
+		 visor.style.backgroundColor = 'red';
+		  visor.style.color = '#fff';
+	 }
+	 console.log(comparador)
+	};
+	
+	switch(models) {
+		case 'SOFIA BANHO': 
+		linear(0.019, 0.320, 0.340);
+		break;
+		case 'SOFIA ROSTO': 
+		linear(0.086, 0.102, 0.120);
+		break;
+		case 'BAMBÚ BANHO': 
+		linear(0.021, 0.390, 0.420);
+		break;
+		case 'BAMBÚ ROSTO': 
+		linear(0.010, 0.126, 0.150);
+		break;
+		case 'GRÉCIA BANHO': 
+		linear(0.018, 0.420, 0.420);
+		break;
+		case 'GRÉCIA ROSTO': 
+		linear(0.097, 0.126, 0.160);
+		break;
+		case 'MÔNACO BANHO': 
+		linear(0.017, 0.230, 0.240);
+		break;
+		case 'MÔNACO ROSTO': 
+		linear(0.085, 0.094, 0.110);
+		break;
+		case 'FLORENÇA BANHO': 
+		linear(0.024, 0.400, 0.420);
+		break;
+		case 'FLORENÇA ROSTO': 
+		linear(0.012, 0.146, 0.150);
+		break;
+		case 'ROYAL BANHO': 
+		linear(0.025, 0.440, 0.466);
+		break;
+		case 'ROYAL ROSTO': 
+		linear(0.010, 0.162, 0.170);
+		break;
+		case 'PRO-LINE BANHO': 
+		linear(0.019, 0.330, 0.410);
+		break;
+		case 'PRO-LINE ROSTO LISA': 
+		linear(0.018, 0.111, 0.126);
+		break;
+		case 'ÉVORA BANHO': 
+		linear(0.018, 0.588, 0.620);
+		break;
+		case 'ÉVORA ROSTO': 
+		linear(0.011, 0.156, 0.170);
+		break;
+		case 'MILÃO BANHO': 
+		linear(0.016, 0.220, 0.230);
+		break;
+		case 'MILÃO	ROSTO': 
+		linear(0.016, 0.094, 0.101);
+		break;
+		case 'MILÃO 2 BANHO': 
+		linear(0.016, 0.200, 0.200);
+		break;
+		case 'MILÃO 2 ROSTO': 
+		linear(0.016, 0.075, 0.098);
+		break;
+		case 'HOTEL BANHO': 
+		linear(0);
+		break;
+		case 'HOTEL ROSTO': 
+		linear(0);
+		break;
+		case 'HOTEL PISO': 
+		linear(0);
+		break;
+		case 'HOTEL 2 BANHO': 
+		linear(0);
+		break;
+		case 'PRO-LINE D BANHO LISA': 
+		linear(0.019, 0.260, 0.284);
+		break;
+		case 'PRO-LINE D ROSTO LISA': 
+		linear(0.018, 0.108, 0.108);
+		break;
+		case 'PRO-LINE PISO': 
+		linear(0.019, 0.218, 0.218);
+		break;
+		 default:
+		 console.log("erro");
+	};
+	
+	} else {
+		alert("Por favor preencha todos os campos!")
+	}
+	
+
+	
+});
+
+
+
+finalizar.addEventListener("click", function() {
+	    <!-- container.style.display = 'none'; -->
+		<!-- container2.style.display = 'block'; -->
+		//href="file:///storage/emulated/0/Download/diane/index2.html"
+		location.href = 'file:///storage/emulated/0/Download/diane/index2.html';	
+		<!-- cursor(); -->
+		<!-- result(); -->
+	
+var elemento = document.querySelector('#remove1');
+var elemento2 = document.querySelector('#remove2');
+		// elemento.parentNode.removeChild(elemento.firstElementChild);
+		
+		// setTimeout(function() {
+			// cursor();
+		// result();
+		// },2000);
+		console.log(elemento)
+		// elemento.remove();
+		// elemento2.remove();
+				
+	
+});
+
+finalizar2.addEventListener("click", function() {
+	container.style.display = 'block';
+	container2.style.display = 'none';
+	
+});
+
+fechar.addEventListener("click", function() {
+	localStorage.clear();
+	location.reload();
+	
+});
+
+function tabela(a, b, c, d, e, f) {
+const tbody = document.querySelector('#remove1');
+const tr = document.createElement('tr');
+const td0 = document.createElement('td');
+const td = document.createElement('td');
+const td2 = document.createElement('td');
+const td3 = document.createElement('td');
+const td4 = document.createElement('td');
+const td5 = document.createElement('td');
+
+
+
+tbody.appendChild(tr);
+
+tr.appendChild(td0);
+tr.appendChild(td);
+tr.appendChild(td2);
+tr.appendChild(td3);
+tr.appendChild(td4);
+tr.appendChild(td5);
+
+
+td0.innerHTML = a;
+td.innerHTML = b;
+td2.innerHTML = c;
+td3.innerHTML = d;
+td4.innerHTML = e;
+td5.innerHTML = f;
+
+
+
+document.querySelector('table').appendChild(tbody);
+
+}
+
+const array1 = [];
+const array2 = [];
+const array3 = [];
+const array4 = [];
+const array5 = [];
+const array6 = [];
+
+var cursor = function() {for(let i = 0; i < localStorage.length; i++) {
+  var tese = localStorage.getItem("model"+i).split(',');
+  
+  
+  
+  
+  tabela(tese[0], tese[5], tese[1], tese[2], tese[3], tese[4]);
+  
+  array1.push(parseFloat(tese[0]));
+  array2.push(parseFloat(tese[1]));
+  array3.push(parseFloat(tese[2]));
+  array4.push(parseFloat(tese[3]));
+  array5.push(parseFloat(tese[4]));
+  array6.push(parseFloat(tese[5]));
+  
+}
+};
+function result() {
+const tbody = document.querySelector('#remove2');
+const tr = document.createElement('tr');
+const td_total_modelo = document.createElement('td');
+const td_total_tara = document.createElement('td');
+const td_total_volumes = document.createElement('td');
+const td_total_quant = document.createElement('td');
+const td_total_peso = document.createElement('td');
+const td_total_linear = document.createElement('td');
+
+var arrayD1 = array1.reduce((total, num) => total + num, 0);
+var arrayD2 = array2.reduce((total, num) => total + num, 0);
+var arrayD3 = array3.reduce((total, num) => total + num, 0);
+var arrayD4 = array4.reduce((total, num) => total + num, 0);
+var arrayD5 = array5.reduce((total, num) => total + num, 0);
+var arrayD6 = array6.reduce((total, num) => total + num, 0);
+
+tbody.appendChild(tr);
+tr.style.backgroundColor = '#161616';
+tr.appendChild(td_total_modelo);
+tr.appendChild(td_total_tara);
+tr.appendChild(td_total_volumes);
+tr.appendChild(td_total_quant);
+tr.appendChild(td_total_peso);
+tr.appendChild(td_total_linear);
+
+td_total_modelo.innerHTML = "-----";
+td_total_tara.innerHTML = arrayD6;
+td_total_volumes.innerHTML = arrayD2;
+td_total_quant.innerHTML = arrayD3;
+td_total_peso.innerHTML = arrayD4;
+td_total_linear.innerHTML = arrayD5.toFixed(3);
+
+document.querySelector('table').appendChild(tbody);
+
+}
+
+//result();
+	</script>
+</body>
+</html>

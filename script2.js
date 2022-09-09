@@ -1,4 +1,5 @@
 
+
 var el = document.getElementById('btn-salvar');
 var finalizar = document.querySelectorAll('h1')[1];
 var finalizar2 = document.querySelectorAll('h1')[2];
@@ -6,8 +7,6 @@ var container = document.querySelector('.container');
 var container2 = document.querySelector('.container2');
 var fechar = document.querySelector('#btn-fechar');
 
-// container.style.display = 'block';
-// container2.style.display = 'none';
 
 	
 var obj = {
@@ -41,157 +40,20 @@ var obj = {
 }
 
 
-
-el.addEventListener("click", function() {
-	var contador = localStorage.length;
-	var contReal = contador + 1;
-
-    var models = document.querySelector('.models').value;
-    var select1 = document.querySelectorAll('select')[1].value;
-    var select2 = document.querySelectorAll('select')[2].value;
-    var peso = document.querySelector('#peso').value;
-	
-	if(select1 != '' || select2 != '' || peso != '') {
-	function linear(tara) {
-	 
-	 let linear = document.querySelector('#linear');
-	 var a = (select1 * tara) + 0.080;
-	 var b = (peso - a) / select2;
-	
-	  linear.value = b.toFixed(3);
-	 
-	 const arr = [models, select1, select2, peso, b, a];
-	 localStorage.setItem("model"+contador, arr);
-	var tese = localStorage.getItem("model"+contador).split(',');
-	};
-	
-	switch(models) {
-		case 'SOFIA BANHO': 
-		linear(0.019);
-		break;
-		case 'SOFIA ROSTO': 
-		linear(0.086);
-		break;
-		case 'BAMBÚ BANHO': 
-		linear(0.021);
-		break;
-		case 'BAMBÚ ROSTO': 
-		linear(0.010);
-		break;
-		case 'GRÉCIA BANHO': 
-		linear(0.018);
-		break;
-		case 'GRÉCIA ROSTO': 
-		linear(0.097);
-		break;
-		case 'MÔNACO BANHO': 
-		linear(0.017);
-		break;
-		case 'MÔNACO ROSTO': 
-		linear(0.085);
-		break;
-		case 'FLORENÇA BANHO': 
-		linear(0.024);
-		break;
-		case 'FLORENÇA ROSTO': 
-		linear(0.012);
-		break;
-		case 'ROYAL BANHO': 
-		linear(0.025);
-		break;
-		case 'ROYAL ROSTO': 
-		linear(0.010);
-		break;
-		case 'PRO-LINE BANHO': 
-		linear(0.019);
-		break;
-		case 'PRO-LINE ROSTO LISA': 
-		linear(0.018);
-		break;
-		case 'ÉVORA BANHO': 
-		linear(0.018);
-		break;
-		case 'ÉVORA BANHO': 
-		linear(0.011);
-		break;
-		case 'MILÃO BANHO': 
-		linear(0.016);
-		break;
-		case 'MILÃO	ROSTO': 
-		linear(0.016);
-		break;
-		case 'MILÃO 2 BANHO': 
-		linear(0.016);
-		break;
-		case 'MILÃO 2 ROSTO': 
-		linear(0.016);
-		break;
-		case 'HOTEL BANHO': 
-		linear(0);
-		break;
-		case 'HOTEL ROSTO': 
-		linear(0);
-		break;
-		case 'HOTEL PISO': 
-		linear(0);
-		break;
-		case 'HOTEL 2 BANHO': 
-		linear(0);
-		break;
-		case 'PRO-LINE D BANHO LISA': 
-		linear(0.019);
-		break;
-		case 'PRO-LINE D ROSTO LISA': 
-		linear(0.018);
-		break;
-		case 'PRO-LINE PISO': 
-		linear(0.019);
-		break;
-		 default:
-		 console.log("erro");
-	};
-	
-	} else {
-		alert("Por favor preencha todos os campos!")
-	}
-	
-
-	
-});
-
-
+var finalizar = document.querySelectorAll('h1')[0];
 
 finalizar.addEventListener("click", function() {
-	    container.style.display = 'none';
-		container2.style.display = 'block';
-				location.href = './index2.html';	
-		cursor();
-		result();
 	
-var elemento = document.querySelector('#remove1');
-var elemento2 = document.querySelector('#remove2');
-		// elemento.parentNode.removeChild(elemento.firstElementChild);
-		
-		// setTimeout(function() {
-			// cursor();
-		// result();
-		// },2000);
-		console.log(elemento)
-		// elemento.remove();
-		// elemento2.remove();
-				
+	location.href = "./index.html";
 	
 });
 
-finalizar2.addEventListener("click", function() {
-	container.style.display = 'block';
-	container2.style.display = 'none';
-	
-});
+
+
 
 fechar.addEventListener("click", function() {
 	localStorage.clear();
-	location.reload();
+	location.href = "./index.html";
 	
 });
 
@@ -237,7 +99,7 @@ const array4 = [];
 const array5 = [];
 const array6 = [];
 
-var cursor = function() {for(let i = 0; i < localStorage.length; i++) {
+for(let i = 0; i < localStorage.length; i++) {
   var tese = localStorage.getItem("model"+i).split(',');
   
   
@@ -253,7 +115,7 @@ var cursor = function() {for(let i = 0; i < localStorage.length; i++) {
   array6.push(parseFloat(tese[5]));
   
 }
-};
+
 function result() {
 const tbody = document.querySelector('#remove2');
 const tr = document.createElement('tr');
@@ -291,4 +153,4 @@ document.querySelector('table').appendChild(tbody);
 
 }
 
-//result();
+result();

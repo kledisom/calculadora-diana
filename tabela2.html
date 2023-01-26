@@ -188,8 +188,8 @@ height: 40px;
 
 #btn-clear {
     background-color: gold;
-    height: 30px;
-    width: 50px;
+    height: 40px;
+    width: 60px;
 }
 
 canvas {
@@ -238,7 +238,7 @@ canvas {
 		 <!-- </div> -->
 		 <div id="acoes">
 				
-				  <input type="button" id="btn-clear" value="Clear" />
+				  <input type="button" id="btn-clear" value="Print" />
 				
 			<canvas></canvas>
 			<span>
@@ -506,7 +506,7 @@ window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
 btnClear.addEventListener('click', function (event) {
-  signaturePad.clear();
+  window.print();
 }); 
 
 </script>

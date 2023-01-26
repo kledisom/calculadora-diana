@@ -485,25 +485,7 @@ document.querySelectorAll('span div')[1].innerHTML = `TRANSPORTADORA: ${transp.t
 
 //assinatura digital
 
-const canvas = document.querySelector("canvas");
 const btnClear = document.querySelector("#btn-clear");
-
-const signaturePad = new SignaturePad(canvas);
-
-signaturePad.minWidth = 1;
-signaturePad.maxWidth = 1;
-signaturePad.penColor = "rgb(66, 133, 244)";
-
-function resizeCanvas() {
-  const ratio =  Math.max(window.devicePixelRatio || 1, 1);
-  canvas.width = canvas.offsetWidth * ratio;
-  canvas.height = canvas.offsetHeight * ratio;
-  canvas.getContext("2d").scale(ratio, ratio);
-  signaturePad.clear(); // otherwise isEmpty() might return incorrect value
-}
-
-window.addEventListener("resize", resizeCanvas);
-resizeCanvas();
 
 btnClear.addEventListener('click', function (event) {
   window.print();

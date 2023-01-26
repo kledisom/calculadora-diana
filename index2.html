@@ -172,10 +172,11 @@ table {
 		 </div>
 		 <div id="acoes">
 			<input id="btn-fechar" type="button" value="DELETE" onclick="del()">
-		    <input id="btn-fechar" type="button" value="ATUALIZAR" >
+		    <input id="btn-fechar" type="button" value="ATUALIZAR" onclick="client()">
 			<input id="btn-fechar" type="button" value="TABELA" onclick="put()" >
 			<input id="btn-fechar" type="button" value="RELATÓRIO" onclick="put2()">
 		 </div>
+		 <center><h5>versão 1.0.1</h5></center>
 	</main>
     <script>
 	
@@ -188,7 +189,19 @@ table {
 		 
 		 localStorage.removeItem(numTR);
 		 
-		 location.reload();
+		location.reload();
+	 }
+	 
+	  function client() {
+	     <!-- var npedido = prompt("digite o numero do pedido: "); -->
+		 <!-- var cliente = prompt("digite o nome do cliente :");		  -->
+		 <!-- var tese = localStorage.getItem("model"+id).split(','); -->
+		 //const arr = [tese[0], tese[1], tese[2], tese[];
+		 
+		 <!-- log(tese); -->
+		<!-- localStorage.setItem('npedido', npedido); -->
+		<!-- localStorage.setItem('cliente', cliente); -->
+		//result()
 	 }
 	 
 	 function put() {
@@ -341,7 +354,7 @@ for(let i = 0; i < localStorage.length; i++) {
   
   
 }
-console.log(array6)
+console.log(array7)
 function result() {
 const tbody = document.querySelector('#remove2');
 const tr = document.createElement('tr');

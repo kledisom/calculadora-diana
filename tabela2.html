@@ -141,10 +141,11 @@ table {
 
 #acoes {
  display: flex;
- justify-content: space-around;
- gap: 20px;
+ flex-direction: column;
+ gap: 5px;
  margin-top: 40px;
  padding: 10px;
+ 
 }
 
 #acoes div {
@@ -153,13 +154,47 @@ table {
  text-align: center;
 }
 
-table {
- width: 100vw;
+#acoes span {
+ display: flex;
+  justify-content: space-around;
+ gap: 20px;
 }
 
-.cabecalho {
- //background-color: red;
- height: 40px;
+table {
+ width: 100vw;
+ font-size: 0.8rem;
+}
+
+.cabecalho span {
+display: flex;
+justify-content: space-around;
+align-items: center;
+height: 40px;
+}
+
+<!-- span div { -->
+ <!-- text-transform: uppercase; -->
+<!-- } -->
+
+@media print {
+ .fim2 {
+  display: none;
+ }
+ 
+ #btn-clear {
+   display: none;
+ }
+}
+
+#btn-clear {
+    background-color: gold;
+    height: 30px;
+    width: 50px;
+}
+
+canvas {
+ height: 150px;
+ width: 100%;
 }
 
 </style>
@@ -171,25 +206,28 @@ table {
         </div>
 	 <table border='1'>
 	     <thead>
-		     <tr><img src="./Capturar26.PNG" width="100%"/></tr>
+		     <tr><img src="https://firebasestorage.googleapis.com/v0/b/palpite-ex.appspot.com/o/Capturar26.PNG?alt=media&token=ab6335c2-f488-4f1e-a1a1-250f95e90379" width="100%"/></tr>
 			 <!-- <th>&nbsp;</th> -->
 			 <tr>
-				 <td class="cabecalho" colspan="9">
-					 <div>DATA:</div>
+				 <td class="cabecalho" colspan="10">
+				 <span>
+				     <div>DATA:</div>
 					  <div>TRANSPORTADORA:</div>
+				 </span>
 				 </td>
 			 </tr>
 			<!-- <th>&nbsp;</th> -->
 			 <tr>
 			 <td>ID</td>
-			 <td>Nº DO PEDIDO</td>
+			 <td width="100" id="npedido">Nº DO PEDIDO</td>
 			 <td>CLIENTE</td>
-			 <td>MODELO</td>
+			 <td width="150">MODELO</td>
 			 <td>TARA</td>
-			 <td>VOLUMES</td>
-			 <td>QUANTIDADES</td>
-			 <td>PESO</td>
+			 <td width="50">VOLUMES</td>
+			 <td width="40">QUANTIDADES</td>
+			 <td width="60">PESO</td>
 			 <td>LINEAR</td>
+			 <td>OBSERVAÇÕES</td>
 			 </tr>
 		 </thead>
 		 <tbody id="remove1"></tbody>
@@ -199,11 +237,21 @@ table {
 		  <!-- <input id="btn-fechar" type="button" value="FINALIZAR" > -->
 		 <!-- </div> -->
 		 <div id="acoes">
-			<div>AUX. DE LABORATÓRIO</div>
+				
+				  <input type="button" id="btn-clear" value="Clear" />
+				
+			<canvas></canvas>
+			<span>
+			 <div>AUX. DE LABORATÓRIO</div>
 			<div>SUPERVISOR DE EXPEDIÇÃO</div>
 			<div>COORDENADOR DE CONFECÇÃO</div>
+			</span>
 		 </div>
+		 <center><h5 style="margin-top: 40px">versão 1.0.2</h5></center>
 	</main>
+	
+	<script src="file:///storage/emulated/0/Download/diane/assets/plugin/package/dist/signature_pad.umd.min.js"></script>
+	<script src="./assets/plugin/package/dist/signature_pad.umd.min.js"></script>
     <script>
 	
 	const log = console.log;
@@ -220,6 +268,7 @@ table {
 	 
 
 var el = document.getElementById('btn-salvar');
+var columnPedido = document.getElementById('npedido');
 var finalizar = document.querySelectorAll('h1')[1];
 var finalizar2 = document.querySelectorAll('h1')[2];
 var container = document.querySelector('.container');
@@ -268,7 +317,13 @@ finalizar.addEventListener("click", function() {
 });
 
 
-
+columnPedido.addEventListener("click", function() {
+	
+	   var npedido = prompt("digite o numero do pedido: ");
+		 var cliente = prompt("digite o nome do cliente :");		 
+	
+	
+});
 
 <!-- fechar.addEventListener("click", function() { -->
 	<!-- localStorage.clear(); -->
@@ -288,8 +343,9 @@ const td5 = document.createElement('td');
 const td6 = document.createElement('td');
 const npedido = document.createElement('td');
 const cliente = document.createElement('td');
+const obs = document.createElement('td');
 
-
+obs.style.border = 'none';
 
 tbody.appendChild(tr);
 
@@ -303,11 +359,12 @@ tr.appendChild(td3);
 tr.appendChild(td4);
 tr.appendChild(td5);
 tr.appendChild(td6);
+tr.appendChild(obs);
 
 
 td0.innerHTML = g;
-npedido.innerHTML = '';
-cliente.innerHTML = '';
+<!-- npedido.innerHTML = ''; -->
+<!-- cliente.innerHTML = ''; -->
 
 
 td.innerHTML = a;
@@ -316,6 +373,7 @@ td3.innerHTML = c;
 td4.innerHTML = d;
 td5.innerHTML = e;
 td6.innerHTML = f;
+obs.innerHTML = '';
 
 
 
@@ -364,6 +422,8 @@ const td_total_linear = document.createElement('td');
 const id = document.createElement('td');
 const npedido = document.createElement('td');
 const cliente = document.createElement('td');
+const obs = document.createElement('td');
+
 
 
 var arrayD1 = array1.reduce((total, num) => total + num, 0);
@@ -374,7 +434,8 @@ var arrayD5 = array5.reduce((total, num) => total + num, 0);
 var arrayD6 = array6.reduce((total, num) => total + num, 0);
 
 tbody.appendChild(tr);
-//tr.style.backgroundColor = '#161616';
+obs.style.border = 'none';
+obs.style.borderBottom = '1px solid gray';
 tr.appendChild(id);
 
 tr.appendChild(npedido);
@@ -386,6 +447,7 @@ tr.appendChild(td_total_volumes);
 tr.appendChild(td_total_quant);
 tr.appendChild(td_total_peso);
 tr.appendChild(td_total_linear);
+tr.appendChild(obs);
 
 
 id.innerHTML = "-----";
@@ -405,6 +467,48 @@ document.querySelector('table').appendChild(tbody);
 }
 
 result();
-	</script>
+
+const timeElapsed = Date.now();
+const today = new Date(timeElapsed);
+const dataAtual = today.toLocaleDateString();
+ var npedido = prompt("digite o numero do pedido: ");
+ var cliente = prompt("digite o nome do cliente :"); 
+ var transp = prompt("digite o nome da transportadora :");
+
+document.querySelectorAll('td')[12].innerHTML = npedido;
+document.querySelectorAll('td')[13].innerHTML = cliente.toUpperCase();
+
+document.querySelectorAll('span div')[0].innerHTML = `DATA: ${dataAtual}`;
+document.querySelectorAll('span div')[1].innerHTML = `TRANSPORTADORA: ${transp.toUpperCase()}`;
+
+
+
+//assinatura digital
+
+const canvas = document.querySelector("canvas");
+const btnClear = document.querySelector("#btn-clear");
+
+const signaturePad = new SignaturePad(canvas);
+
+signaturePad.minWidth = 1;
+signaturePad.maxWidth = 1;
+signaturePad.penColor = "rgb(66, 133, 244)";
+
+function resizeCanvas() {
+  const ratio =  Math.max(window.devicePixelRatio || 1, 1);
+  canvas.width = canvas.offsetWidth * ratio;
+  canvas.height = canvas.offsetHeight * ratio;
+  canvas.getContext("2d").scale(ratio, ratio);
+  signaturePad.clear(); // otherwise isEmpty() might return incorrect value
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+btnClear.addEventListener('click', function (event) {
+  signaturePad.clear();
+}); 
+
+</script>
 </body>
 </html>

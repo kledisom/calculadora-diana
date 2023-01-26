@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- <link rel="stylesheet" href="./assets/style.css" /> -->
-    <title>Document</title>
+    <title>DIANA_CALC 1.0.1</title>
 	
 	<style>
 	 * {
@@ -78,15 +78,37 @@ table {
     width: 120px;
 }
 
+#qtda {
+    height: 25px;
+    width: 100px;
+}
+
 #peso {
     height: 25px;
     width: 100px;
 }
 
+
+
 #linear {
     background-color: #fff;
 	margin-bottom: 20px;
 	height: 40px;
+	text-align: center;
+	border: 2px solid #161616;
+	border-radius: 10px;
+}
+
+.linear {
+    background-color: #fff;
+	margin-bottom: 20px;
+	height: 20px;
+	width: 60px;
+	text-align: center;
+	background-color: #161616;
+	border: 2px solid #161616;
+	color: #fff;
+	cursor: pointer
 }
 
 #btn-salvar {
@@ -140,6 +162,12 @@ table {
 	width: 100px;
 }
 
+.display-linear {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
 	</style>
 </head>
 <body>
@@ -178,11 +206,17 @@ table {
 					<option value="PRO-LINE D BANHO LISA">PRO-LINE D BANHO LISA</option>
 					<option value="PRO-LINE D ROSTO LISA">PRO-LINE D ROSTO LISA</option>
 					<option value="PRO-LINE PISO">PRO-LINE PISO</option>
+					<option value="LENCOL CAMA PA">LENCOL CAMA PA</option>
+					<option value="LENCOL SOLTEIRO PA">LENCOL SOLTEIRO PA</option>
             </optgroup>
         </select>
        </div>
        <div class="card">
-	     <input id="linear" type="text" placeholder="linear" disabled="">
+	          <div class="display-linear">
+				<div class="linear"></div>
+				 <input id="linear" type="text" placeholder="linear" disabled="">
+				  <div class="linear"></div>
+			  </div>
 			 <div>
 			   <select class="grade">
 					<option value="">GRADE</option>
@@ -196,29 +230,61 @@ table {
 					<option value="8">8</option>
 					<option value="9">9</option>
 					<option value="10">10</option>
-				</select>
-				<select class="grade">
-					<option value="">QUANTIDADE</option>
-					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
 					<option value="15">15</option>
-					<option value="20">20</option>
-					<option value="25">25</option>
-					<option value="30">30</option>
-					<option value="35">35</option>
-					<option value="40">40</option>
-					<option value="45">45</option>
 					<option value="50">50</option>
-					<option value="55">55</option>
-					<option value="60">60</option>
-					<option value="65">65</option>
-					<option value="70">70</option>
-					<option value="75">75</option>
-					<option value="80">80</option>
-					<option value="85">85</option>
-					<option value="90">90</option>
-					<option value="95">95</option>
-					<option value="100">100</option>
 				</select>
+				<!-- <select class="grade"> -->
+					<!-- <option value="">QUANTIDADE</option> -->
+					<!-- <option value="10">10</option> -->
+					<!-- <option value="15">15</option> -->
+					<!-- <option value="20">20</option> -->
+					<!-- <option value="25">25</option> -->
+					<!-- <option value="30">30</option> -->
+					<!-- <option value="31">31</option> -->
+					<!-- <option value="35">35</option> -->
+					<!-- <option value="37">37</option> -->
+					<!-- <option value="40">40</option> -->
+					<!-- <option value="42">42</option> -->
+					<!-- <option value="45">45</option> -->
+					<!-- <option value="50">50</option> -->
+					<!-- <option value="55">55</option> -->
+					<!-- <option value="60">60</option> -->
+					<!-- <option value="62">62</option> -->
+					<!-- <option value="65">65</option> -->
+					<!-- <option value="70">70</option> -->
+					<!-- <option value="75">75</option> -->
+					<!-- <option value="80">80</option> -->
+					<!-- <option value="85">85</option> -->
+					<!-- <option value="90">90</option> -->
+					<!-- <option value="95">95</option> -->
+					<!-- <option value="100">100</option> -->
+					<!-- <option value="105">105</option> -->
+					<!-- <option value="110">110</option> -->
+					<!-- <option value="115">115</option> -->
+					<!-- <option value="120">120</option> -->
+					<!-- <option value="125">125</option> -->
+					<!-- <option value="130">130</option> -->
+					<!-- <option value="135">135</option> -->
+					<!-- <option value="140">140</option> -->
+					<!-- <option value="145">145</option> -->
+					<!-- <option value="150">150</option> -->
+					<!-- <option value="155">155</option> -->
+					<!-- <option value="160">160</option> -->
+					<!-- <option value="165">165</option> -->
+					<!-- <option value="170">170</option> -->
+					<!-- <option value="175">175</option> -->
+					<!-- <option value="180">180</option> -->
+					<!-- <option value="185">185</option> -->
+					<!-- <option value="190">190</option> -->
+					<!-- <option value="195">195</option> -->
+					<!-- <option value="200">200</option> -->
+				<!-- </select> -->
+				
+				<input id="qtda" type="number" placeholder="qtda">
 				<input id="peso" type="number" placeholder="peso">
 				
 			 </div>
@@ -226,6 +292,7 @@ table {
        <div class="card3">
         <input id="btn-salvar" type="button" value="SALVAR" placeholder="peso">
        </div>
+		<center><h5>versão 1.0.1</h5></center>
     </main>
 	
 	<main id="main2" class="container2">
@@ -250,9 +317,10 @@ table {
 		 <div class="btn-finalizar">
 		  <input id="btn-fechar" type="button" value="FINALIZAR" >
 		 </div>
-	 
+	
 	</main>
     <script>
+	
 	 
 var el = document.getElementById('btn-salvar');
 var finalizar = document.querySelectorAll('h1')[1];
@@ -303,22 +371,31 @@ el.addEventListener("click", function() {
 
     var models = document.querySelector('.models').value;
     var select1 = document.querySelectorAll('select')[1].value;
-    var select2 = document.querySelectorAll('select')[2].value;
+    var select2 = document.querySelector('#qtda').value;;
     var peso = document.querySelector('#peso').value;
 	
+	
 	if(select1 != '' || select2 != '' || peso != '') {
+	
 	function linear(tara, min, max) {
-	 
+	
+	 var param1 = document.querySelectorAll('.linear')[0];
+	 var param2 = document.querySelectorAll('.linear')[1];
 	 let linear = document.querySelector('#linear');
 	 var a = (select1 * tara) + 0.080;
 	 var b = (peso - a) / select2;
 	
 	  linear.value = b.toFixed(3);
+	  
+	  param1.innerHTML = min.toFixed(3);
+	  param2.innerHTML = max.toFixed(3);
+	  
+	  
 	 
 	 const arr = [models, select1, select2, peso, b, a];
 	 localStorage.setItem("model"+contador, arr);
 	 var tese = localStorage.getItem("model"+contador).split(',');
-	 alert("salvo!")
+	 alert("salvo!" + contador);
 	 
 	 let comparador = b.toFixed(3);
 	 
@@ -335,7 +412,6 @@ el.addEventListener("click", function() {
 	 }
 	 console.log(comparador)
 	};
-	
 	switch(models) {
 		case 'SOFIA BANHO': 
 		linear(0.019, 0.320, 0.340);
@@ -388,7 +464,7 @@ el.addEventListener("click", function() {
 		case 'MILÃO BANHO': 
 		linear(0.016, 0.220, 0.230);
 		break;
-		case 'MILÃO	ROSTO': 
+		case 'MILÃO ROSTO':
 		linear(0.016, 0.094, 0.101);
 		break;
 		case 'MILÃO 2 BANHO': 
@@ -398,7 +474,7 @@ el.addEventListener("click", function() {
 		linear(0.016, 0.075, 0.098);
 		break;
 		case 'HOTEL BANHO': 
-		linear(0);
+		linear(0.039, 0.400, 0.400);
 		break;
 		case 'HOTEL ROSTO': 
 		linear(0);
@@ -418,18 +494,48 @@ el.addEventListener("click", function() {
 		case 'PRO-LINE PISO': 
 		linear(0.019, 0.218, 0.218);
 		break;
+		case 'LENCOL CAMA PA': 
+		linear(0.098, 0.790, 0.790);
+		break;
+		case 'LENCOL SOLTEIRO PA': 
+		linear(0.098, 0.746, 0.746);
+		break;
 		 default:
 		 console.log("erro");
+		 alert('erro interno por favor contate o desenvolvedor')
 	};
 	
 	} else {
 		alert("Por favor preencha todos os campos!")
 	}
 	
-
-	
 });
 
+//============mostrar alert com tolerância de 5%==========//
+var param1 = document.querySelectorAll('.linear')[0];
+var param2 = document.querySelectorAll('.linear')[1];	
+	 
+	 param1.addEventListener("click", function() {
+	 
+	       //calcula 5% para mais ou para menos
+			var x = parseFloat(param1.innerHTML);
+			var y = (x * 5) / 100;
+			var r1 = (x + y).toFixed(3);
+			var r2 = (x - y).toFixed(3);
+			
+			alert(`menos ${r2} || mais ${r1}`);			
+		});
+		
+	 param2.addEventListener("click", function() {
+	 
+	       //calcula 5% para mais ou para menos
+			var x = parseFloat(param2.innerHTML);
+			var y = (x * 5) / 100;
+			var r1 = (x + y).toFixed(3);
+			var r2 = (x - y).toFixed(3);
+			
+			alert(`menos ${r2} || mais ${r1}`);			
+		});
 
 
 finalizar.addEventListener("click", function() {

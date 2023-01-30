@@ -187,7 +187,7 @@ table {
 			<input id="btn-fechar" type="button" value="DELETE" onclick="del()">
 		    <input id="btn-fechar" type="button" value="ATUALIZAR" onclick="client()">
 			<input id="btn-fechar" type="button" value="TABELA" onclick="put()" >
-			<input id="btn-fechar" type="button" value="RELATÓRIO" onclick="put2()">
+			<input id="btn-fechar" type="button" value="NOVO" onclick="put2()">
 		 </div>
 		 <center><h5>versão 1.0.1</h5></center>
 	</main>
@@ -241,7 +241,8 @@ table {
 		 <!-- log(tese); -->
 		// localStorage.setItem('model14', arr)
 		
-		location.href = "./tabela2.html";
+		localStorage.clear();
+		location.href = './index.html';	
 		 
 	 }
 
@@ -297,9 +298,7 @@ finalizar.addEventListener("click", function() {
 
 
 fechar.addEventListener("click", function() {
-	localStorage.clear();
-	location.href = './index.html';	
-	
+	location.href = "./tabela2.html";
 });
 
 function tabela(a, b, c, d, e, f, g) {

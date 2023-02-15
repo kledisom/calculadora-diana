@@ -1,16 +1,6 @@
 const staticCacheName = 'willian-j-{{ site.time | date: "%Y-%m-%d-%H-%M" }}';
 
-const filesToCache = [
-  { % for page in site.pages_to_cache % }
-    '{ { page } }',
-  { % endfor % }
-  { % for post in site.posts limit: 6 % }
-    '{ { post.url } }',
-  { % endfor % }
-  { % for asset in site.files_to_cache % }
-    '{ { asset } }',
-  { % endfor % }
-];
+const filesToCache = ['index.html'];
 
 // Cache on install
 this.addEventListener("install", event => {
